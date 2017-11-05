@@ -1,2 +1,4 @@
-# angularJS
-Projects based on AngularJS
+# AngularJS
+
+Coursera folder contains the exercises from the AngularJS course.  
+Apps contain AngularJS based projects.
