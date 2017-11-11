@@ -1,4 +1,4 @@
-# AngularJS
+# Angular
 
 ## Repo Content
 
