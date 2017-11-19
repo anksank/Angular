@@ -12,6 +12,25 @@ import { Component } from '@angular/core';
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
 })
+
+/**
+ * Template or style can also be specified inline
+ * 
+ * Below is an example of inline template.
+ * Use $ to use variables within the template.
+ * 
+ * Same thing can be done for styles as well, 
+ * instead of styleUrls, give 'style' for it
+ /** 
+@Component({
+	selector: 'app-root',
+	template: `<h1>{{title}}</h1>
+	`,
+	styleUrls: ['./app.component.scss']
+})
+ */
+
+// Below variables can be used in templates
 export class AppComponent {
 	title = 'app';
 }
