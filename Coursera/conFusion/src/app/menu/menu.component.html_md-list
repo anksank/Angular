@@ -1,0 +1,32 @@
+<!-- 
+  fxLayout is used by angular to set the flex layout to horizontal or vertical
+  column = vertical
+  row = horizontal
+-->
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+	<!-- 
+		md-list = angular material list component, 
+		md-list is like the media object from bootstrap 
+		fxFlex = means that the component will be a single piece
+	-->
+	<div fxFlex>
+		<div>
+			<h3>Menu</h3>
+			<hr>
+		</div>
+	</div>
+	<md-list fxFlex>
+		<!--	
+			*ngFor is a structural directive in angular
+			dishes is an array.below line works like a for loop
+			md-line => to define a line inside a list
+		-->
+		<md-list-item *ngFor="let dish of dishes">
+			<img md-list-avatar src={{dish.image}} alt={{dish.name}}>
+			<h1 md-line>{{dish.name}}</h1>
+			<p md-line>
+				<span>{{dish.description}}</span>
+			</p>
+		</md-list-item>
+	</md-list>
+</div>

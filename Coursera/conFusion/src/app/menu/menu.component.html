@@ -4,23 +4,47 @@
   row = horizontal
 -->
 <div class="container" fxLayout="column" fxLayoutGap="10px">
-	<!-- 
-		md-list = angular material list component, 
-		md-list is like the media object from bootstrap 
-		fxFlex = means that the component will be a single piece
-	-->
-	<md-list fxFlex>
-		<!--	
-			*ngFor is a structural directive in angular
-			dishes is an array.below line works like a for loop
-			md-line => to define a line inside a list
-		-->
-		<md-list-item *ngFor="let dish of dishes">
-			<img md-list-avatar src={{dish.image}} alt={{dish.name}}>
-			<h1 md-line>{{dish.name}}</h1>
-			<p md-line>
-				<span>{{dish.description}}</span>
-			</p>
-		</md-list-item>
-	</md-list>
+    <!-- 
+        md-list = angular material list component, 
+        md-list is like the media object from bootstrap 
+        fxFlex = means that the component will be a single piece
+    -->
+    <div fxFlex>
+        <div>
+            <h3>Menu</h3>
+            <hr>
+        </div>
+    </div>
+    <div fxFlex>
+        <md-grid-list cols="2" rowHeight="200px">
+            <md-grid-tile *ngFor="let dish of dishes">
+                <img height="200px" src={{dish.image}} alt={{dish.name}}>
+                <md-grid-tile-footer>
+                    <!-- 
+                        uppercase (built-in angular pipe) pipe transforms the text to upper case
+                     -->
+                    <h1 md-line>{{ dish.name | uppercase }}</h1>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
+
+    <!-- card element usage in angular -->
+    <div fxFlex *ngIf="selectedDish">
+        <md-card>
+            <md-card-header>
+                <md-card-title>
+                    <h3>{{ selectedDish.name | uppercase }}</h3>
+                </md-card-title>
+            </md-card-header>
+            <img md-card-image src="{{selectedDish.image}}" alt="{{selectedDish.name}}">
+            <md-card-content>
+                <p>{{ selectedDish.description}} </p>
+            </md-card-content>
+            <md-card-actions>
+                <button md-button>LIKE</button>
+                <button md-button>SHARE</button>
+            </md-card-actions>
+        </md-card>
+    </div>
 </div>
